@@ -1,4 +1,20 @@
-<svg
+---
+import Layout from "../layouts/BlogPost.astro";
+---
+
+<Layout
+    title="Contact Me"
+    description="Information about the contact page"
+    pubDate={new Date("February 26 2024")}
+>
+    <div
+        style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+        }}
+    >
+        <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 200 200"
             width="200"
@@ -36,3 +52,35 @@
                 stroke-width="0"
                 transform="scale(1, -1) translate(0, -200)"></path>
         </svg>
+    </div>
+    <form class="wrapper">
+        <label for="name">
+            <input type="text" name="name" id="name" placeholder="Your name" />
+        </label>
+        <label for="email">
+            <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Your email"
+            />
+        </label>
+        <label for="content">
+            <textarea
+                name="content"
+                id="content"
+                cols="2"
+                rows="10"
+                placeholder="message"></textarea>
+        </label>
+    </form>
+</Layout>
+
+<style>
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em;
+    }
+</style>
